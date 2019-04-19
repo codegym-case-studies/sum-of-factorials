@@ -1,12 +1,10 @@
-alert('Sum of factories is' + sum(factoryAll(getNumbers())))
-
 var number;
 var isCheck = true;
 var array = [];
 function getNumbers () {
     while (isCheck) {
         array.push(input());
-        check();
+        checkStopInput();
     }
     return array;
 }
@@ -16,16 +14,20 @@ function input() {
     return number;
 }
 
-function check() {
+function checkStopInput() {
     isCheck = prompt("Co nhap tiep khong? Y or N");
     if (isCheck === "Y") {
         isCheck = true;
     } else if (isCheck === "N") {
         isCheck = false;
+    } else {
+        alert("Ban phai nhap Y hoac N.");
+        checkStopInput();
     }
 }
 
 getNumbers();
+console.log(array);
 
 function sum(factoryAll) {
     let sum =0;
@@ -55,3 +57,4 @@ function factory(number) {
     return factoryNum;
 }
 
+alert('Sum of factories is' + sum(factoryAll(getNumbers())));
