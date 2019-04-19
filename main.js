@@ -1,5 +1,3 @@
-alert('Sum of factories is' + sum(factoryAll(getNumbers())))
-
 var number;
 var isCheck = true;
 var array = [];
@@ -55,3 +53,4 @@ function factory(number) {
     return factoryNum;
 }
 
+alert('Sum of factories is' + sum(factoryAll(getNumbers())))
